@@ -29,6 +29,11 @@ public class Upload extends ActionSupport {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	public static final String BLACKLIST_FILE_PATH = "E:\\DevTools\\Eclipse\\workspace\\WebAnwendung\\blacklist.txt";
+	public static final String WHITELIST_FILE_PATH = "E:\\DevTools\\Eclipse\\workspace\\WebAnwendung\\whitelist.txt";
+	
+	
 	private File file;
 	private String contentType;
 	private String filename;
@@ -46,8 +51,8 @@ public class Upload extends ActionSupport {
 	private List<String> blacklistSitesList = new ArrayList<String>();
 	private List<String> whitelistList = new ArrayList<String>();
 
-	File blacklistFile = new File("E:\\DevTools\\Eclipse\\workspace\\WebAnwendung\\blacklist.txt");
-	File whitelistFile = new File("E:\\DevTools\\Eclipse\\workspace\\WebAnwendung\\whitelist.txt");
+	File blacklistFile = new File(BLACKLIST_FILE_PATH);
+	File whitelistFile = new File(WHITELIST_FILE_PATH);
 	
 	
 
