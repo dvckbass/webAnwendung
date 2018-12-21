@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.velocity.manager.classname" value="org.apache.struts2.views.velocity.VelocityManager" />
+    <constant name="devMode" value="true" />
+    <package name="default" extends="struts-default">
+        <action name="Upload" class="com.example.webanwendung.Upload">
+            <result name="input" type="velocity">/upload.vm</result>
+            <result name="success" type="velocity">/success.vm</result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset=UTF-8">
+        <title>Send File</title>
+        <link rel="stylesheet" type="text/css" href="layout/styles.css">
+    </head>
+    <body> 
+    
+          #sform ("action=Upload" "enctype=multipart/form-data" "method=post")
+              #sfile ("label=File" "name=upload")            
+              #stextfield ("label=File Name" "name=name")      
+              #stextarea ("label=Black List" "name=blacklist" "cols=50" "rows=4" "value=#foreach($word in $blacklistTermsList)$word;#end")
+              #stextarea ("label=White List" "name=whitelist" "cols=50" "rows=4" "value=#foreach($word in $whitelistList)$word;#end")
+              #ssubmit ("value=Upload")
+          #end
+          
+    </body>
+</html>
+ 
