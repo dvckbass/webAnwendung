@@ -23,10 +23,8 @@
         #foreach ($word in $csv.keySet())
         	#set ($value = $csv.get($word)) 
         	#set ($font = "")
-        	#set ($font = ($largestTag - $smallestTag) * (($value - $minTag) / ($maxTag - $minTag)) + $smallestTag)
-       		#Font: $font, largestTag: $largestTag, smallestTag: $smallestTag, Value: $value, minTag: $minTag, maxTag: $maxTag <br> 
- 
-       		<font size=$font>$word</font><br>
+        	#set ($font = ($largestTag - $smallestTag) * (($value - $minTag) / ($maxTag - $minTag)) + $smallestTag)      		
+       		<font size=$font>$word</font>
      
         #end
     </body>

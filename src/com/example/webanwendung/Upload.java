@@ -42,7 +42,7 @@ public class Upload extends ActionSupport {
 	private String name;
 	private float minTag, maxTag;
 	private float smallestTag = 1;
-	private float largestTag = 7;
+	private float largestTag = 100;
 
 	private TreeMap<String, Integer> csv = new TreeMap<String, Integer>();
 	private Map<String, List<String>> termSites = new HashMap<String, List<String>>();
