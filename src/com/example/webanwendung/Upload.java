@@ -216,8 +216,12 @@ public class Upload extends ActionSupport {
 
 			break;
 		case "sites":
+			writeBlacklist(blacklistWriter);
 			blacklistSitesList = putSitesToBlacklist();
 			System.out.println("Sites to blacklist done");
+			for(String bl: blacklistSitesList) {
+				System.out.println("blacklistSitesList: " + bl);
+			}
 			getTermsFromSites();
 			System.out.println("Terms obtained from sites");
 			removeBlacklist();
@@ -290,7 +294,7 @@ public class Upload extends ActionSupport {
 	 */
 
 	public List<String> splitList(List<String> list, String listString) {
-		list = Arrays.asList(listString.split(";"));
+		list = new ArrayList(Arrays.asList(listString.split(";")));
 		return list;
 	}
 
@@ -360,6 +364,7 @@ public class Upload extends ActionSupport {
 
 	private void getTermsFromSites() {
 		String term;
+		
 		// loop through blacklistsiteslist
 		for (String blacklist : blacklistSitesList) {
 			// loop through hashmap termsites to match value
@@ -368,6 +373,7 @@ public class Upload extends ActionSupport {
 				for (String site : sites) {
 					if (blacklist.equals(site)) {
 						term = (String) getKeyFromValue(termSites, sites);
+						System.out.println("blacklisttermslist size:" + blacklistTermsList.size());
 						blacklistTermsList.add(term);
 					}
 				}
@@ -418,7 +424,7 @@ public class Upload extends ActionSupport {
 		}
 		
 		for (String str : lineString) {
-			list.addAll(Arrays.asList(str.split(";")));
+			list.addAll(new ArrayList(Arrays.asList(str.split(";"))));
 		}
 	
 		
